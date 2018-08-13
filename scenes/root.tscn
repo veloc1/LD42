@@ -1,0 +1,449 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/root.gd" type="Script" id=1]
+[ext_resource path="res://assets/tile1.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/tile2.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/tile3.jpg" type="Texture" id=4]
+[ext_resource path="res://objects/font_material.tres" type="Material" id=5]
+[ext_resource path="res://objects/player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/wall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/image2.axd.png" type="Texture" id=8]
+[ext_resource path="res://objects/static_wall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sounds/music.wav" type="AudioStream" id=10]
+[ext_resource path="res://objects/box.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objects/button.tscn" type="PackedScene" id=12]
+[ext_resource path="res://objects/small_wall.tscn" type="PackedScene" id=13]
+
+[sub_resource type="TileSet" id=1]
+
+0/name = ""
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 0, 0 )
+0/is_autotile = false
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+1/name = ""
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 0, 0 )
+1/is_autotile = false
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [  ]
+2/name = ""
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 0, 0 )
+2/is_autotile = false
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [  ]
+_sections_unfolded = [ "2" ]
+
+[node name="root" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="bg" type="TileMap" parent="." index="0"]
+
+z_index = -1
+mode = 0
+tile_set = SubResource( 1 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -393214, 0, 0, -393213, 1, 0, -393212, 2, 0, -393211, 0, 0, -393210, 1, 0, -393209, 2, 0, -393208, 0, 0, -393207, 1, 0, -393206, 2, 0, -393205, 0, 0, -393204, 1, 0, -393203, 2, 0, -393202, 0, 0, -393201, 1, 0, -393200, 2, 0, -393199, 0, 0, -393198, 1, 0, -393197, 2, 0, -393196, 0, 0, -393195, 1, 0, -393194, 2, 0, -393193, 0, 0, -393192, 1, 0, -393191, 2, 0, -327679, 0, 0, -327678, 1, 0, -327677, 2, 0, -327676, 0, 0, -327675, 1, 0, -327674, 2, 0, -327673, 0, 0, -327672, 1, 0, -327671, 2, 0, -327670, 0, 0, -327669, 1, 0, -327668, 2, 0, -327667, 0, 0, -327666, 1, 0, -327665, 2, 0, -327664, 0, 0, -327663, 1, 0, -327662, 2, 0, -327661, 0, 0, -327660, 1, 0, -327659, 2, 0, -327658, 0, 0, -327657, 1, 0, -327656, 2, 0, -262144, 0, 0, -262143, 1, 0, -262142, 2, 0, -262141, 0, 0, -262140, 1, 0, -262139, 2, 0, -262138, 0, 0, -262137, 1, 0, -262136, 2, 0, -262135, 0, 0, -262134, 1, 0, -262133, 2, 0, -262132, 0, 0, -262131, 1, 0, -262130, 2, 0, -262129, 0, 0, -262128, 1, 0, -262127, 2, 0, -262126, 0, 0, -262125, 1, 0, -262124, 2, 0, -262123, 0, 0, -262122, 1, 0, -262121, 2, 0, -131073, 0, 0, -196608, 1, 0, -196607, 2, 0, -196606, 0, 0, -196605, 1, 0, -196604, 2, 0, -196603, 0, 0, -196602, 1, 0, -196601, 2, 0, -196600, 0, 0, -196599, 1, 0, -196598, 2, 0, -196597, 0, 0, -196596, 1, 0, -196595, 2, 0, -196594, 0, 0, -196593, 1, 0, -196592, 2, 0, -196591, 0, 0, -196590, 1, 0, -196589, 2, 0, -196588, 0, 0, -196587, 1, 0, -196586, 2, 0, -65538, 0, 0, -65537, 1, 0, -131072, 2, 0, -131071, 0, 0, -131070, 1, 0, -131069, 2, 0, -131068, 0, 0, -131067, 1, 0, -131066, 2, 0, -131065, 0, 0, -131064, 1, 0, -131063, 2, 0, -131062, 0, 0, -131061, 1, 0, -131060, 2, 0, -131059, 0, 0, -131058, 1, 0, -131057, 2, 0, -131056, 0, 0, -131055, 1, 0, -131054, 2, 0, -131053, 0, 0, -131052, 1, 0, -131051, 2, 0, -3, 0, 0, -2, 1, 0, -1, 2, 0, -65536, 0, 0, -65535, 1, 0, -65534, 2, 0, -65533, 0, 0, -65532, 1, 0, -65531, 2, 0, -65530, 0, 0, -65529, 1, 0, -65528, 2, 0, -65527, 0, 0, -65526, 1, 0, -65525, 2, 0, -65524, 0, 0, -65523, 1, 0, -65522, 2, 0, -65521, 0, 0, -65520, 1, 0, -65519, 2, 0, -65518, 0, 0, -65517, 1, 0, -65516, 2, 0, 65532, 0, 0, 65533, 1, 0, 65534, 2, 0, 65535, 0, 0, 0, 1, 0, 1, 2, 0, 2, 0, 0, 3, 1, 0, 4, 2, 0, 5, 0, 0, 6, 1, 0, 7, 2, 0, 8, 0, 0, 9, 1, 0, 10, 2, 0, 11, 0, 0, 12, 1, 0, 13, 2, 0, 14, 0, 0, 15, 1, 0, 16, 2, 0, 17, 0, 0, 18, 1, 0, 19, 2, 0, 131067, 0, 0, 131068, 1, 0, 131069, 2, 0, 131070, 0, 0, 131071, 1, 0, 65536, 2, 0, 65537, 0, 0, 65538, 1, 0, 65539, 2, 0, 65540, 0, 0, 65541, 1, 0, 65542, 2, 0, 65543, 0, 0, 65544, 1, 0, 65545, 2, 0, 65546, 0, 0, 65547, 1, 0, 65548, 2, 0, 65549, 0, 0, 65550, 1, 0, 65551, 2, 0, 65552, 0, 0, 65553, 1, 0, 65554, 2, 0, 196602, 0, 0, 196603, 1, 0, 196604, 2, 0, 196605, 0, 0, 196606, 1, 0, 196607, 2, 0, 131072, 0, 0, 131073, 1, 0, 131074, 2, 0, 131075, 0, 0, 131076, 1, 0, 131077, 2, 0, 131078, 0, 0, 131079, 1, 0, 131080, 2, 0, 131081, 0, 0, 131082, 1, 0, 131083, 2, 0, 131084, 0, 0, 131085, 1, 0, 131086, 2, 0, 131087, 0, 0, 131088, 1, 0, 131089, 2, 0, 262137, 0, 0, 262138, 1, 0, 262139, 2, 0, 262140, 0, 0, 262141, 1, 0, 262142, 2, 0, 262143, 0, 0, 196608, 1, 0, 196609, 2, 0, 196610, 0, 0, 196611, 1, 0, 196612, 2, 0, 196613, 0, 0, 196614, 1, 0, 196615, 2, 0, 196616, 0, 0, 196617, 1, 0, 196618, 2, 0, 196619, 0, 0, 196620, 1, 0, 196621, 2, 0, 196622, 0, 0, 196623, 1, 0, 196624, 2, 0, 327672, 0, 0, 327673, 1, 0, 327674, 2, 0, 327675, 0, 0, 327676, 1, 0, 327677, 2, 0, 327678, 0, 0, 327679, 1, 0, 262144, 2, 0, 262145, 0, 0, 262146, 1, 0, 262147, 2, 0, 262148, 0, 0, 262149, 1, 0, 262150, 2, 0, 262151, 0, 0, 262152, 1, 0, 262153, 2, 0, 262154, 0, 0, 262155, 1, 0, 262156, 2, 0, 262157, 0, 0, 262158, 1, 0, 262159, 2, 0, 393207, 0, 0, 393208, 1, 0, 393209, 2, 0, 393210, 0, 0, 393211, 1, 0, 393212, 2, 0, 393213, 0, 0, 393214, 1, 0, 393215, 2, 0, 327680, 0, 0, 327681, 1, 0, 327682, 2, 0, 327683, 0, 0, 327684, 1, 0, 327685, 2, 0, 327686, 0, 0, 327687, 1, 0, 327688, 2, 0, 327689, 0, 0, 327690, 1, 0, 327691, 2, 0, 327692, 0, 0, 327693, 1, 0, 327694, 2, 0, 458742, 0, 0, 458743, 1, 0, 458744, 2, 0, 458745, 0, 0, 458746, 1, 0, 458747, 2, 0, 458748, 0, 0, 458749, 1, 0, 458750, 2, 0, 458751, 0, 0, 393216, 1, 0, 393217, 2, 0, 393218, 0, 0, 393219, 1, 0, 393220, 2, 0, 393221, 0, 0, 393222, 1, 0, 393223, 2, 0, 393224, 0, 0, 393225, 1, 0, 393226, 2, 0, 393227, 0, 0, 393228, 1, 0, 393229, 2, 0, 524277, 0, 0, 524278, 1, 0, 524279, 2, 0, 524280, 0, 0, 524281, 1, 0, 524282, 2, 0, 524283, 0, 0, 524284, 1, 0, 524285, 2, 0, 524286, 0, 0, 524287, 1, 0, 458752, 2, 0, 458753, 0, 0, 458754, 1, 0, 458755, 2, 0, 458756, 0, 0, 458757, 1, 0, 458758, 2, 0, 458759, 0, 0, 458760, 1, 0, 458761, 2, 0, 458762, 0, 0, 458763, 1, 0, 458764, 2, 0, 589812, 0, 0, 589813, 1, 0, 589814, 2, 0, 589815, 0, 0, 589816, 1, 0, 589817, 2, 0, 589818, 0, 0, 589819, 1, 0, 589820, 2, 0, 589821, 0, 0, 589822, 1, 0, 589823, 2, 0, 524288, 0, 0, 524289, 1, 0, 524290, 2, 0, 524291, 0, 0, 524292, 1, 0, 524293, 2, 0, 524294, 0, 0, 524295, 1, 0, 524296, 2, 0, 524297, 0, 0, 524298, 1, 0, 524299, 2, 0, 655347, 0, 0, 655348, 1, 0, 655349, 2, 0, 655350, 0, 0, 655351, 1, 0, 655352, 2, 0, 655353, 0, 0, 655354, 1, 0, 655355, 2, 0, 655356, 0, 0, 655357, 1, 0, 655358, 2, 0, 655359, 0, 0, 589824, 1, 0, 589825, 2, 0, 589826, 0, 0, 589827, 1, 0, 589828, 2, 0, 589829, 0, 0, 589830, 1, 0, 589831, 2, 0, 589832, 0, 0, 589833, 1, 0, 589834, 2, 0 )
+_sections_unfolded = [ "Cell", "Z Index" ]
+
+[node name="label_control" type="Label" parent="." index="1"]
+
+material = ExtResource( 5 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_top = 599.0
+margin_right = 470.0
+margin_bottom = 647.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Use A and D to move.
+Left mouse button spawn new wall, 
+right mouse button spawn a box, that you can throw."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Size Flags", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="label_gameplay1" type="Label" parent="." index="2"]
+
+material = ExtResource( 5 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 453.0
+margin_top = 603.0
+margin_right = 939.0
+margin_bottom = 651.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "There is nothing that can hurt, it's just a sandbox at the moment.
+But there is a secret at the top of the room..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Size Flags", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="label_gameplay2" type="Label" parent="." index="3"]
+
+material = ExtResource( 5 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 919.0
+margin_top = 583.0
+margin_right = 1334.0
+margin_bottom = 631.0
+rect_rotation = -35.0075
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Drop a wall here"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Size Flags", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="label_gameplay3" type="Label" parent="." index="4"]
+
+material = ExtResource( 5 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 998.0
+margin_top = 324.0
+margin_right = 1413.0
+margin_bottom = 372.0
+rect_rotation = -89.974
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Try to push the button with the box."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Size Flags", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="player" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 216.77, 562.225 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="6"]
+
+anchor_mode = 1
+rotating = true
+current = true
+zoom = Vector2( 0.7, 0.7 )
+limit_left = -10000
+limit_top = -10000
+limit_right = 10000
+limit_bottom = 10000
+limit_smoothed = false
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = false
+smoothing_speed = 30.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
+editor_draw_screen = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Transform" ]
+
+[node name="Timer" type="Timer" parent="Camera2D" index="0"]
+
+process_mode = 1
+wait_time = 0.2
+one_shot = true
+autostart = false
+
+[node name="Tween" type="Tween" parent="." index="7"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+_sections_unfolded = [ "playback" ]
+
+[node name="wall3" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 495.947, 429.634 )
+rotation = 3.14159
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Light2D" type="Light2D" parent="." index="9"]
+
+position = Vector2( 102.393, 46.2809 )
+enabled = true
+editor_only = false
+texture = ExtResource( 8 )
+offset = Vector2( 0, 0 )
+texture_scale = 10.0
+color = Color( 1, 1, 1, 1 )
+energy = 0.01
+mode = 2
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = true
+shadow_color = Color( 0.3125, 0.3125, 0.3125, 0.558 )
+shadow_buffer_size = 1024
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Range", "Shadow" ]
+
+[node name="walls" type="Node2D" parent="." index="10"]
+
+editor/display_folded = true
+
+[node name="static_wall" parent="walls" index="0" instance=ExtResource( 9 )]
+
+position = Vector2( 94.7643, 734.966 )
+
+[node name="static_wall15" parent="walls" index="1" instance=ExtResource( 9 )]
+
+position = Vector2( 90.8871, -32.185 )
+
+[node name="static_wall16" parent="walls" index="2" instance=ExtResource( 9 )]
+
+position = Vector2( 283.826, -32.185 )
+
+[node name="static_wall17" parent="walls" index="3" instance=ExtResource( 9 )]
+
+position = Vector2( 476.656, -35.4793 )
+
+[node name="static_wall18" parent="walls" index="4" instance=ExtResource( 9 )]
+
+position = Vector2( 671.942, -35.1997 )
+
+[node name="static_wall19" parent="walls" index="5" instance=ExtResource( 9 )]
+
+position = Vector2( 867.353, -35.1997 )
+
+[node name="static_wall20" parent="walls" index="6" instance=ExtResource( 9 )]
+
+position = Vector2( 1063.66, -87.7432 )
+
+[node name="static_wall4" parent="walls" index="7" instance=ExtResource( 9 )]
+
+position = Vector2( 289.298, 736.326 )
+
+[node name="static_wall5" parent="walls" index="8" instance=ExtResource( 9 )]
+
+position = Vector2( 485.191, 763.049 )
+
+[node name="static_wall6" parent="walls" index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 678.364, 734.966 )
+
+[node name="static_wall7" parent="walls" index="10" instance=ExtResource( 9 )]
+
+position = Vector2( 872.257, 709.873 )
+
+[node name="static_wall8" parent="walls" index="11" instance=ExtResource( 9 )]
+
+position = Vector2( 1066.59, 732.966 )
+
+[node name="static_wall2" parent="walls" index="12" instance=ExtResource( 9 )]
+
+position = Vector2( 13.0616, 89.6313 )
+rotation = 1.5708
+
+[node name="static_wall9" parent="walls" index="13" instance=ExtResource( 9 )]
+
+position = Vector2( 13.0616, 285.525 )
+rotation = 1.5708
+
+[node name="static_wall10" parent="walls" index="14" instance=ExtResource( 9 )]
+
+position = Vector2( 10.3409, 482.779 )
+rotation = 1.5708
+
+[node name="static_wall11" parent="walls" index="15" instance=ExtResource( 9 )]
+
+position = Vector2( -27.7495, 675.952 )
+rotation = 1.5708
+
+[node name="static_wall3" parent="walls" index="16" instance=ExtResource( 9 )]
+
+position = Vector2( 1154.81, 41.8608 )
+rotation = -1.5708
+
+[node name="static_wall12" parent="walls" index="17" instance=ExtResource( 9 )]
+
+position = Vector2( 1179.55, 234.414 )
+rotation = -1.5708
+
+[node name="static_wall13" parent="walls" index="18" instance=ExtResource( 9 )]
+
+position = Vector2( 1185.92, 422.266 )
+rotation = -1.5708
+
+[node name="static_wall14" parent="walls" index="19" instance=ExtResource( 9 )]
+
+position = Vector2( 1177.42, 601.796 )
+rotation = -1.5708
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="11"]
+
+stream = ExtResource( 10 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="boxes" type="Node2D" parent="." index="12"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="box" parent="boxes" index="0" instance=ExtResource( 11 )]
+
+position = Vector2( 782.05, 59.9951 )
+
+[node name="box14" parent="boxes" index="1" instance=ExtResource( 11 )]
+
+position = Vector2( 286.738, 64.5392 )
+
+[node name="box17" parent="boxes" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( 280.893, 88.0838 )
+applied_force = Vector2( 0, -10 )
+applied_torque = 300.0
+_sections_unfolded = [ "Applied Forces", "Collision", "Transform" ]
+
+[node name="box2" parent="boxes" index="3" instance=ExtResource( 11 )]
+
+position = Vector2( 803.604, 100.11 )
+
+[node name="box3" parent="boxes" index="4" instance=ExtResource( 11 )]
+
+position = Vector2( 773.069, 107.894 )
+
+[node name="box4" parent="boxes" index="5" instance=ExtResource( 11 )]
+
+position = Vector2( 797.018, 142.022 )
+
+[node name="box5" parent="boxes" index="6" instance=ExtResource( 11 )]
+
+position = Vector2( 784.445, 83.3458 )
+
+[node name="box6" parent="boxes" index="7" instance=ExtResource( 11 )]
+
+position = Vector2( 807.197, 68.9761 )
+
+[node name="box7" parent="boxes" index="8" instance=ExtResource( 11 )]
+
+position = Vector2( 767.081, 151.003 )
+
+[node name="box8" parent="boxes" index="9" instance=ExtResource( 11 )]
+
+position = Vector2( 800.611, 164.175 )
+
+[node name="box9" parent="boxes" index="10" instance=ExtResource( 11 )]
+
+position = Vector2( 776.063, 173.755 )
+
+[node name="box10" parent="boxes" index="11" instance=ExtResource( 11 )]
+
+position = Vector2( 767.68, 127.652 )
+
+[node name="box11" parent="boxes" index="12" instance=ExtResource( 11 )]
+
+position = Vector2( 805.999, 122.862 )
+
+[node name="box12" parent="boxes" index="13" instance=ExtResource( 11 )]
+
+position = Vector2( 759.298, 89.9319 )
+
+[node name="box13" parent="boxes" index="14" instance=ExtResource( 11 )]
+
+position = Vector2( 752.712, 171.959 )
+
+[node name="button" parent="." index="13" instance=ExtResource( 12 )]
+
+position = Vector2( 1055.53, -46.7063 )
+rotation = 3.14159
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="small_wall" parent="." index="14" instance=ExtResource( 13 )]
+
+position = Vector2( 718.445, 93.4821 )
+
+[node name="small_wall2" parent="." index="15" instance=ExtResource( 13 )]
+
+position = Vector2( 865.773, 93.4821 )
+
+[node name="small_wall3" parent="." index="16" instance=ExtResource( 13 )]
+
+position = Vector2( 790.881, 210.117 )
+rotation = 1.5708
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="on_button_pressed" from="button" to="." method="on_button_pressed"]
+
+

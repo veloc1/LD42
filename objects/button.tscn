@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/button.gd" type="Script" id=1]
+[ext_resource path="res://assets/button.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12.1235, 7.49805 )
+
+[node name="button" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( -0.387424, 1.54969 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+position = Vector2( -0.19371, -6.58618 )
+texture = ExtResource( 2 )
+
+[connection signal="area_entered" from="." to="." method="_on_button_area_entered"]
+
+[connection signal="body_entered" from="." to="." method="_on_button_body_entered"]
+
+
