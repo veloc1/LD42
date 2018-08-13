@@ -2,4 +2,4 @@
 
 Little prototype with gravity changing
 
-[LD entry](3-day-three.gif)
+![LD entry large gif](3-day-three.gif)
